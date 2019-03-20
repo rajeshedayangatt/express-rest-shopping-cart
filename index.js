@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 
 const productRouter = require("./routers/product");
 const userRouter = require("./routers/user");
+const cartRouter = require("./routers/cart");
 
 require("./db");
 
@@ -22,6 +23,9 @@ app.use("/api", productRouter);
 
 //user routes
 app.use("/api", userRouter);
+
+//cart routes
+app.use("/api", cartRouter);
 
 app.listen(5000, (err) => {
 	if (err) console.log(err);
